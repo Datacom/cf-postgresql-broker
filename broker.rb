@@ -15,6 +15,11 @@ def connection
   ActiveRecord::Base.connection
 end
 
+# For information purposes only
+get '/' do
+  send_file 'index.html'
+end
+
 # Display the service / plan metadata stored in config.yml
 get '/v2/catalog' do
   content_type :json
