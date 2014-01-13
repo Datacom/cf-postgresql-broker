@@ -1,0 +1,39 @@
+services:
+  - id: 99d29303-a146-4b47-9f3f-ebcb1e9651f1
+    name: postgres
+    description: PostgreSQL service for application development and testing
+    tags:
+      - postgres
+      - relational
+    metadata:
+      provider:
+        name:
+      listing:
+        imageUrl: ~
+        blurb: PostgreSQL service for application development and testing
+        longDescription: A PostgreSQL relational database service appropriate for development and testing. The service delivers databases on a multi-tenant non-redundant server. A single set of credentials are shared between bindings for a single service instance.
+      displayName: "Postgres POC"
+    plans:
+    - id: 2e8d3df1-d363-4eeb-a17a-596a7658aff4
+      name: Unlimited
+      description: Shared Postgres Server, 5mb persistent disk, 40 max concurrent connections
+      metadata:
+        cost: 0.0
+        bullets:
+        - content: Shared Postgres server
+        - content: 5 MB storage
+        - content: 40 concurrent connections
+    bindable: true
+
+databaseRoot:
+  adapter: postgresql
+  host: localhost
+  username: cf
+  password: cf
+  database: postgres
+  encoding: utf8
+
+databaseClientInfo:
+  host: 172.17.133.59
+  port: 5432
+
