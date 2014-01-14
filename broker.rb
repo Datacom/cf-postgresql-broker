@@ -61,11 +61,11 @@ put '/v2/service_instances/:instance_id/service_bindings/:id' do |instance_id, i
     :username => 'U' + instance_id,
     :password => 'cf'
   }
-  credentials[:url] = "postgres://#{credentials[:username]}:#{credentials[:password]}@#{credentials[:hostname]}:#{credentials[:port]}/#{credentials[:name]}"
+  credentials[:uri] = "postgres://#{credentials[:username]}:#{credentials[:password]}@#{credentials[:hostname]}:#{credentials[:port]}/#{credentials[:name]}"
   credentials[:jdbcUrl] = "jdbc:#{credentials[:url]}"
   
   # Success
-  {':credentials' => credentials}.to_json
+  {:credentials => credentials}.to_json
 end
 
 # Delete a service binding
