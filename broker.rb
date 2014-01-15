@@ -61,8 +61,8 @@ put '/v2/service_instances/:instance_id/service_bindings/:id' do |instance_id, i
     :username => 'U' + instance_id,
     :password => 'cf'
   }
-  credentials[:uri] = "postgres://#{credentials[:username]}:#{credentials[:password]}@#{credentials[:hostname]}:#{credentials[:port]}/#{credentials[:name]}"
-  credentials[:jdbcUrl] = "jdbc:#{credentials[:uri]}"
+  credentials[:uri] = "postgresql://#{credentials[:username]}:#{credentials[:password]}@#{credentials[:hostname]}:#{credentials[:port]}/#{credentials[:name]}"
+  credentials[:jdbcUrl] = "jdbc:postgresql://#{credentials[:hostname]}:#{credentials[:port]}/#{credentials[:name]}"
   
   # Success
   {:credentials => credentials}.to_json
