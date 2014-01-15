@@ -3,7 +3,7 @@ services:
     name: postgres
     description: PostgreSQL service for application development and testing
     tags:
-      - postgres
+      - postgresql
       - relational
     metadata:
       provider:
