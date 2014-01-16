@@ -44,7 +44,7 @@ delete '/v2/service_instances/:id' do |id|
   check_id(id)
 
   connection.execute("update pg_database set datallowconn = 'false' where datname = 'D#{id}'")
-  connection.execute("select pg_terminate_backend(procpid) from pg_stat_activity where datname = 'D#{id}'")
+  connection.execute("select pg_terminate_backend(pid) from pg_stat_activity where datname = 'D#{id}'")
   connection.execute("drop database \"D#{id}\"")
   connection.execute("drop user \"U#{id}\"")
   
