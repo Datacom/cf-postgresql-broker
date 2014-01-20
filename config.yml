@@ -1,7 +1,7 @@
 services:
   - id: 99d29303-a146-4b47-9f3f-ebcb1e9651f1
-    name: postgres
-    description: PostgreSQL service for application development and testing
+    name: postgresql-9.3
+    description: PostgreSQL 9.3 database service
     tags:
       - postgresql
       - relational
@@ -15,7 +15,7 @@ services:
       displayName: "Postgres POC"
     plans:
     - id: 2e8d3df1-d363-4eeb-a17a-596a7658aff4
-      name: Unlimited
+      name: 5MB
       description: Shared Postgres Server, 5mb persistent disk, 40 max concurrent connections
       metadata:
         cost: 0.0
