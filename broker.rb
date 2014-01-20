@@ -1,4 +1,5 @@
 # Require a few gems
+require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/config_file'
 require 'json'
