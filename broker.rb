@@ -54,7 +54,10 @@ delete '/v2/service_instances/:id' do |id|
 end
 
 # Create a new service binding (actually just return the credentials)
-put '/v2/service_instances/:instance_id/service_bindings/:id' do |instance_id, id|
+put '/v2/service_bindings/:id' do |id|
+  request_json = JSON.parse(request.body.string)
+  instance_id = request_json['service_instance_id']
+
   credentials = {
     :hostname => settings.databaseClientInfo['host'],
     :port => settings.databaseClientInfo['port'],
